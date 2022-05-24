@@ -1,11 +1,14 @@
 {
-  "Number_of_spies": "تعداد جاسوس ها",
-  "Number_of_players": "تعداد بازیکنان",
-  "Time": "زمان",
-  "Start": "شروع",
-  "Back": "بازگشت",
-  "Show_Word": "نمایش کلمه",
-  "Hide": "پنهان کردن",
+  "spy_game_web_app": "وب اپلیکیشن بازی جاسوس",
+  "developer": "توسعه دهنده",
+  "back": "بازگشت",
+  "next_person": "نفر بعدی",
+  "show_word": "نمایش کلمه",
+  "hide": "پنهان کردن",
   "spy": "جاسوس",
-  "Next_Person": "نفر بعدی"
+  "number_of_spies": "تعداد جاسوس ها",
+  "number_of_players": "تعداد بازیکنان",
+  "time": "زمان",
+  "start": "شروع",
+  "spy_game": "بازی جاسوس"
 }

@@ -1,11 +1,14 @@
 {
-  "Number_of_spies": "Number of Spies",
-  "Number_of_players": "Number of Players",
-  "Time": "Time",
-  "Start": "Start",
-  "Back": "Back",
-  "Show_Word": "Show Word",
-  "Hide": "Hide",
+  "spy_game_web_app": "Spy Game Web App",
+  "developer": "Developer",
+  "back": "Back",
+  "next_person": "Next Person",
+  "show_word": "Show Word",
+  "hide": "Hide",
   "spy": "Spy",
-  "Next_Person": "Next Person"
+  "number_of_spies": "Number Of Spies",
+  "number_of_players": "Number Of Players",
+  "time": "Time",
+  "start": "Start",
+  "spy_game": "Spy Game"
 }
