@@ -66,6 +66,7 @@ export class PageHome extends AppElement {
       }
       .main .settings .settings__ranges .settings__ranges-icon {
         margin: 0 8px;
+        --mmzmk-iconsax-md-fs: 28px;
       }
       .main .settings .settings__ranges .settings__ranges-text {
         margin: 0;
@@ -133,14 +134,13 @@ export class PageHome extends AppElement {
         <div class="settings">
           <div class="settings__ranges">
             <div class="settings__ranges-info">
-              <mmzmk-iconsax name="user" class="settings__ranges-icon"></mmzmk-iconsax>
-              <p class="settings__ranges-text">${localize('Number_of_spies')}: ${this._settings.spies}</p>
+              <mmzmk-iconsax name="user-remove" category="broken" class="settings__ranges-icon"></mmzmk-iconsax>
+              <p class="settings__ranges-text">${localize('number_of_spies')}: ${this._settings.spies}</p>
             </div>
             <div class="settings__ranges-range">
               <ion-range
                 min="1"
                 max="10"
-                pin
                 name="spies"
                 @ionChange="${(e: re): void => this._changeSettings('spies', <number>e.detail.value)}"
               >
@@ -149,14 +149,13 @@ export class PageHome extends AppElement {
           </div>
           <div class="settings__ranges">
             <div class="settings__ranges-info">
-              <mmzmk-iconsax name="user" class="settings__ranges-icon"></mmzmk-iconsax>
-              <p class="settings__ranges-text">${localize('Number_of_players')}: ${this._settings.players}</p>
+              <mmzmk-iconsax name="user" category="broken" class="settings__ranges-icon"></mmzmk-iconsax>
+              <p class="settings__ranges-text">${localize('number_of_players')}: ${this._settings.players}</p>
             </div>
             <div class="settings__ranges-range">
               <ion-range
                 min="3"
                 max="25"
-                pin
                 name="players"
                 @ionChange="${(e: re): void => this._changeSettings('players', <number>e.detail.value)}"
               >
@@ -165,8 +164,8 @@ export class PageHome extends AppElement {
           </div>
           <div class="settings__ranges">
             <div class="settings__ranges-info">
-              <mmzmk-iconsax name="user" class="settings__ranges-icon"></mmzmk-iconsax>
-              <p class="settings__ranges-text">${localize('Time')}: ${this._settings.time}</p>
+              <mmzmk-iconsax name="timer-1" category="broken" class="settings__ranges-icon"></mmzmk-iconsax>
+              <p class="settings__ranges-text">${localize('time')}: ${this._settings.time}</p>
             </div>
             <div class="settings__ranges-range">
               <ion-range
@@ -174,7 +173,6 @@ export class PageHome extends AppElement {
                 max="30"
                 step="5"
                 snaps
-                pin
                 name="time"
                 @ionChange="${(e: re): void => this._changeSettings('time', <number>e.detail.value)}"
               >
@@ -186,7 +184,7 @@ export class PageHome extends AppElement {
               size="large"
               @click="${this._startGame}"
               ?disabled="${this._settings.spies + 2 > this._settings.players}"
-              >${localize('Start')}</ion-button
+              >${localize('start')}</ion-button
             >
           </div>
         </div>
