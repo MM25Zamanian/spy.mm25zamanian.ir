@@ -1,4 +1,4 @@
-import {initialI18n} from '@alwatr/i18n';
+import {initialI18n, localChangeSignal, l10nResourceChangeSignal, localize} from '@alwatr/i18n';
 import {router} from '@alwatr/router';
 import {SignalInterface} from '@alwatr/signal';
 import {css, html, nothing} from 'lit';
@@ -26,11 +26,8 @@ declare global {
 }
 
 init();
-// initialI18n({
-//   defaultLocal: {code: 'en-US', language: 'en', direction: 'ltr'},
-// });
 initialI18n({
-  defaultLocal: {code: 'fa-IR', language: 'fa', direction: 'rtl'},
+  defaultLocal: {code: 'en-US', language: 'en', direction: 'ltr'},
 });
 
 /**
@@ -149,6 +146,8 @@ export class AppIndex extends AppElement {
         this._hideNavigationSignal.addListener((_hideNavigation) => {
           this._hideNavigation = _hideNavigation;
         }),
+        localChangeSignal.addListener(() => this.requestUpdate()),
+        l10nResourceChangeSignal.addListener(() => this.requestUpdate()),
     );
     this._hideNavigationSignal.dispatch(false);
   }
@@ -181,10 +180,21 @@ export class AppIndex extends AppElement {
       <ion-header>
         <ion-toolbar color="primary">
           <ion-buttons slot="secondary">${listTemplate}</ion-buttons>
-          <ion-title>Secondary Toolbar</ion-title>
+          <ion-buttons slot="primary">
+            <ion-button @click="${this.langSwitch}"> ${localChangeSignal.value?.language} </ion-button>
+          </ion-buttons>
+          <ion-title>${localize('spy_game')}</ion-title>
         </ion-toolbar>
       </ion-header>
     `;
+  }
+
+  protected langSwitch(): void {
+    if (localChangeSignal.value?.code === 'fa-IR') {
+      localChangeSignal.dispatch({code: 'en-US', language: 'en', direction: 'ltr'});
+    } else if (localChangeSignal.value?.code === 'en-US') {
+      localChangeSignal.dispatch({code: 'fa-IR', language: 'fa', direction: 'rtl'});
+    }
   }
 }
 
