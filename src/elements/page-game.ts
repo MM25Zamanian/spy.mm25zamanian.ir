@@ -126,24 +126,24 @@ export class PageGame extends AppElement {
                 <spy-timer duration="${this._timeSeconds}"></spy-timer>
               </h1>
               <div class="game-next">
-                <ion-button color="danger" @click="${this._back}">${localize('Back')}</ion-button>
+                <ion-button color="danger" @click="${this._back}">${localize('back')}</ion-button>
               </div>
             `,
       () =>
         html`${when(
             this._hideWord,
             () => html`
-                  <h1 class="ion-text-center">${localize('Next_Person')}</h1>
+                  <h1 class="ion-text-center">${localize('next_person')}</h1>
                   <div class="game-next">
                     <ion-button size="large" color="tertiary" @click="${this._show}">
-                      ${localize('Show_Word')}
+                      ${localize('show_word')}
                     </ion-button>
                   </div>
                 `,
             () => html`
                   <h1 class="ion-text-center">${this._words[this._wordActive]}</h1>
                   <div class="game-next">
-                    <ion-button size="large" @click="${this._hide}">${localize('Hide')}</ion-button>
+                    <ion-button size="large" @click="${this._hide}">${localize('hide')}</ion-button>
                   </div>
                 `,
         )}`,
