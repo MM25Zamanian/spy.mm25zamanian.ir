@@ -7,7 +7,7 @@ import {customElement} from 'lit/decorators/custom-element.js';
 
 import {AppElement} from '../app-debt/app-element';
 import globalStyleSheets from '../global.css';
-import './spy-timer';
+import '../components/spy-timer';
 
 import type {ListenerInterface} from '@alwatr/signal';
 import type {TemplateResult} from 'lit';
@@ -160,7 +160,7 @@ export class PageGame extends AppElement {
   }
 
   protected _back(): void {
-    router.signal.dispatch({sectionList: [], queryParamList: {}, hash: ''}, {debounce: true});
+    router.signal.request({pathname: '/'});
   }
 
   protected _show(): void {
